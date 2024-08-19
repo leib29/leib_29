@@ -1,0 +1,52 @@
+/desenhar-jogo
+  ├── index.html
+  ├── sketch.js
+  ├── style.css
+  └── README.md
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desenhar Jogo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
+*sketch.js
+  let drawing = [];
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  background(255);
+}
+
+function draw() {
+  if (mouseIsPressed) {
+    stroke(0);
+    strokeWeight(4);
+    line(pmouseX, pmouseY, mouseX, mouseY);
+    drawing.push([pmouseX, pmouseY, mouseX, mouseY]);
+  }
+}
+
+function keyPressed() {
+  if (key === 'c') {
+    background(255);
+    drawing = [];
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+# Desenhar Jogo
+
+Este é um jogo simples de desenho criado com p5.js. Permite que você desenhe na tela com o mouse.
+
+
